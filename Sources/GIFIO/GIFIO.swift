@@ -4,7 +4,7 @@ import UIKit
 import CoreServices
 
 public struct GIFIO {
-    func image(data: Data, scale: CGFloat = 1.0, duration: TimeInterval = 0.0) -> UIImage? {
+    static func image(data: Data, scale: CGFloat = 1.0, duration: TimeInterval = 0.0) -> UIImage? {
         let options = [
             kCGImageSourceShouldCache: true,
             kCGImageSourceTypeIdentifierHint: kUTTypeGIF
@@ -45,7 +45,7 @@ public struct GIFIO {
         }
     }
     
-    func data(image: UIImage, duration: TimeInterval = 0.0, loopCount: Int = 0) -> Data? {
+    static func data(image: UIImage, duration: TimeInterval = 0.0, loopCount: Int = 0) -> Data? {
         let images = image.images ?? [image]
         
         let frameCount = images.count
