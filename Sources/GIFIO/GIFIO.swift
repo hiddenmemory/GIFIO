@@ -50,7 +50,7 @@ public struct GIFIO {
         
         let frameCount = images.count
         
-        var data = NSMutableData()
+        let data = NSMutableData()
         
         guard let destination = CGImageDestinationCreateWithData(data, kUTTypeGIF, frameCount, nil) else {
             return nil
